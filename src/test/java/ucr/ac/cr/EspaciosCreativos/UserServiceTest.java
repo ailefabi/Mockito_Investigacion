@@ -42,7 +42,7 @@ public class UserServiceTest {
         /**
          * @BeforeEach se ejecuta antes de cada prueba individual.
          * Aquí preparamos un objeto User base para evitar repetir código
-         * en cada método de test (principio DRY).
+         * en cada metodo de test.
          */
         @BeforeEach
         void setUp() {
@@ -77,7 +77,7 @@ public class UserServiceTest {
 
 
     // ====================================================
-    // 2. PRUEBA: Guardar un usuario que ya existe (escenario de error/control)
+    // 2. PRUEBA: Guardar un usuario que ya existe (escenario de error)
     // ====================================================
     @Test
     void saveUser_DeberiaRetornarNull_CuandoElUsuarioYaExiste() {
@@ -87,7 +87,7 @@ public class UserServiceTest {
         // Act
         UserDTO resultado = userService.saveUser(user);
 
-        // Assert: el método debe devolver null según la lógica de negocio
+        // Assert: el metodo debe devolver null según la lógica de negocio
         assertNull(resultado);
 
         // Verificamos que jamás se intentó guardar un usuario duplicado
